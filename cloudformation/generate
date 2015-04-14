@@ -1,0 +1,16 @@
+#!/usr/bin/env ruby
+
+require 'sparkle_formation'
+require 'pp'
+require 'json'
+
+SparkleFormation.sparkle_path = File.join(File.dirname(__FILE__), '')
+pp SparkleFormation.sparkle_path
+puts JSON.pretty_generate(
+  SparkleFormation.compile(
+    File.join(
+      File.dirname(__FILE__),
+      'elk.rb'
+    )
+  )
+)
